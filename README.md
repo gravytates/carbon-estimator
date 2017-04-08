@@ -18,6 +18,12 @@ The idea with this program is to take input from a person in regards to how far 
 
 The epa website is pretty in depth. I don't think we should go so far as to ask for how much in dollars people spend on heating and cooling for example. I see our project as being a straight forward, educational tool that can be helpful for our portfolios once we leave epicodus.
 
+natural gas numbers source: https://www.eia.gov/pub/oil_gas/natural_gas/feature_articles/2010/ngtrendsresidcon/ngtrendsresidcon.pdf
+
+returning weather adjusted natty gas consumption for pacific western states (Oregon) per customer: 53.2 thousand cubic feet/yr
+
+book with reference to economies of scale within a household (epa's calculator indicates a 1:1 for households with multiple people, that for larger households utility cost doesn't decrease per person, which is crazy, so this book shows evidence that utilities can be decreased anywhere from 20-40% on a per person scale with larger households, not definitive but worth a shake- usa is probably on the lower end of these numbers though) https://books.google.com/books?id=Mfe8ukMh_v4C&pg=PA262&lpg=PA262&dq=number+of+people+in+household+effects+utilities&source=bl&ots=YlRgmFSegO&sig=3ZpWTEvLYrS1nNhjto2AvOyCqy0&hl=en&sa=X&ved=0ahUKEwjPsOrC6JXTAhVCyGMKHR8hDIgQ6AEIUDAI#v=onepage&q=utility%20cost&f=false
+
 
 
 ## Setup
