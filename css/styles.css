@@ -16,6 +16,7 @@ body {
 
 #homePage {
   border: none;
+  margin-left: 40px;
 }
 
 
@@ -24,10 +25,12 @@ body {
   padding-right: 10px;
   float: left;
   border-left: solid grey 1px;
+  margin-right: 0px;
 }
 
 h1 {
-  padding-top: 20px;
+  margin-top: 0px;
+  padding-top: 35px;
   padding-left: 20px;
   position: fixed;
   text-align: center;
