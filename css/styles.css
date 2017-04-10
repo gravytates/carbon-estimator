@@ -1,0 +1,40 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+#header {
+  position: fixed;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  margin-top: 50px;
+  background-color: rgb(195, 226, 163);
+  width: 100%;
+}
+
+.intro {
+  margin-top: 210px;
+}
+
+#homePage {
+  border: none;
+  margin-left: 40px;
+}
+
+
+.pages {
+  padding-left: 10px;
+  padding-right: 10px;
+  float: left;
+  border-left: solid grey 1px;
+  margin-right: 0px;
+}
+
+h1 {
+  margin-top: 0px;
+  padding-top: 35px;
+  padding-left: 20px;
+  position: fixed;
+  text-align: center;
+  background-color: rgb(195, 226, 163);
+  width: 100%;
+  z-index: 1;
+}
