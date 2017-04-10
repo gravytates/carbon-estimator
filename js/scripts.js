@@ -27,15 +27,6 @@ $(document).ready(function() {
 
 // *Reference * //
 // Transportation
-
-
 // Public Transit
 // // lightrail: 0.36 lbs co2/mi; 0.14 if full occupancy
 // bus: 0.56 lbs co2/mi; 0.18 if full occupancy
-//
-// Transportation co2 reduction techniques:
-// walk or ride a bicycle
-// take the bus or lightrail
-// perform regular maintenance on vehicle: $214 annual savings and 1,157 lbs co2
-// reduce drive miles: proportional to mpg.
-//
