@@ -22,7 +22,7 @@
       <p>
         because reasons! Lorem ipsum lorem ipsum....
       </p>
-      <form class="" action="index.html" method="post">
+      <form id="input" class="" action="index.html" method="post">
         <label for="">Home Energy A</label><br>
         <input type="text" name="" value=""><br>
 
@@ -32,14 +32,24 @@
         <label for="">Home Energy C</label><br>
         <input type="text" name="" value=""><br>
 
-        <label for="">Transportation A</label><br>
-        <input type="text" name="" value=""><br>
 
-        <label for="">Transportation B</label><br>
-        <input type="text" name="" value=""><br>
-
-        <label for="">Transportation C</label><br>
-        <input type="text" name="" value=""><br>
+         <label for="modeOfTransportation">What is your primary mode of transportation?</label>
+         <br>
+         <select id="mode">
+           <option value="">Please choose a transportation mode...</option>
+           <option value="0">walk</option>
+           <option value="0">bike</option>
+           <option value="1.32">truck (older than 2016)</option>
+           <option value=".94">small pickup</option>
+           <option value="1.1">standard pickup</option>
+           <option value=".39">hybrid</option>
+           <option value=".84">sedan</option>
+         </select>
+         <br>
+         <div class="averageMiles">
+            <label for="milesPerGallon">How many miles do you travel per week?</label>
+            <input id="miles" class="form-control" placeholder="enter your miles/week here" type="number">
+          </div>
 
         <label for="">Waste A</label><br>
         <input type="text" name="" value=""><br>

@@ -1,38 +1,33 @@
 //*--Business Logic--*//
 //Mode of Transportation//
-function Mode() {
-  this.walk = 0;
-  this.bike = 0;
-  this.oldTruck = ;
-  this.smallPickup = smallPickup;
-  this.standard = standardPickup
-  this.hybrid = hybrid;
-  this.sedan = sedan;
+function Economic(mode, miles) {
+  this.mode = mode;
+  this.miles = miles;
 }
 
 //Prototype for Mode of Transportation//
-Mode.prototype.getModeCarbonTotal = function() {
-  inputtedMiles * theModeFunction;
-
-  //User inputs miles by mode. we multiple the miles by the corresponding multiplier for the mode.
+Economic.prototype.modeCarbonTotal = function(mode, miles) {
+  var transportProduct = this.mode * this.miles;
+  return transportProduct;
 }
-
 
 //*--User Interface--*//
 $(document).ready(function() {
-
+  var transportation = new Economic();
+  $("#input").submit(function(e) {
+    e.preventDefault();
+    var inputtedMode = $("#mode").val();
+    var inputtedMiles = $("#miles").val();
+    var getCarbonTotal = new Economic(inputtedMode, inputtedMiles);
+    getCarbonTotal.modeCarbonTotal();
+    console.log(getCarbonTotal.modeCarbonTotal());
+  });
 });
 
 
 // *Reference * //
 // Transportation
 
-// Vehicles:
-// 2012 truck: 15mpg with 1.32 lbs co2/mi
-// newer hybrids: 50mpg avg with 0.39 lbs co2/mi
-// new sedans/wagons: 23.7 mpg avg with 0.84 lbs co2/mi
-// small pickup: 21 mpg avg with 0.94 lbs co2/mi
-// standard pickup: 18 mpg avg with 1.1 lbs co2/mi
 
 // Public Transit
 // // lightrail: 0.36 lbs co2/mi; 0.14 if full occupancy
