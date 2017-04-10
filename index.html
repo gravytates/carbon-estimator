@@ -14,7 +14,6 @@
   </head>
   <body>
     <div class="container">
-
       <div class="jumbotron">
         <h1>Estimate your Carbon!</h1>
       </div>
@@ -23,42 +22,59 @@
         because reasons! Lorem ipsum lorem ipsum....
       </p>
       <form id="input" class="" action="index.html" method="post">
-        <label for="">Home Energy A</label><br>
-        <input type="text" name="" value=""><br>
-
-        <label for="">Home Energy B</label><br>
-        <input type="text" name="" value=""><br>
-
+        <div class="monthlyBill">
+         <label for="monthlyBill">On average, how much do you pay per month for natural gas?</label>
+         <input id="natgas" class="form-control" placeholder="enter your avg. monthly bill" type="number">
+        </div>
+        <div class="monthlyBill">
+          <label for="monthlyBill">On average, how much do you pay per month for fuel oil?</label>
+          <input id="fuel" class="form-control" placeholder="enter your avg. monthly bill" type="number">
+        </div>
+        <div class="monthlyElectric">
+          <label for="monthlyElectric">How much do you pay for electricity each month?</label><br>
+          <input id="electricity" class="form-control" type="number" value=""placeholder="enter your avg monthly bill"><br>
+        </div>
         <label for="">Home Energy C</label><br>
         <input type="text" name="" value=""><br>
+        <label for="modeOfTransportation">What is your primary mode of transportation?</label>
+        <br>
+        <select id="mode">
+          <option value="">Please choose a transportation mode...</option>
+          <option value="0">walk</option>
+          <option value="0">bike</option>
+          <option value=".36">the MAX</option>
+          <option value=".56">bus</option>
+          <option value="1.32">truck (older than 2016)</option>
+          <option value=".94">small pickup</option>
+          <option value="1.1">standard pickup</option>
+          <option value=".39">hybrid</option>
+          <option value=".84">sedan</option>
+        </select>
+        <br>
+        <div class="averageMiles">
+          <label for="milesPerGallon">How many miles do you travel per week?</label>
+          <input id="miles" class="form-control" placeholder="enter your miles/week here" type="number">
+        </div>
 
-
-         <label for="modeOfTransportation">What is your primary mode of transportation?</label>
-         <br>
-         <select id="mode">
-           <option value="">Please choose a transportation mode...</option>
-           <option value="0">walk</option>
-           <option value="0">bike</option>
-           <option value="1.32">truck (older than 2016)</option>
-           <option value=".94">small pickup</option>
-           <option value="1.1">standard pickup</option>
-           <option value=".39">hybrid</option>
-           <option value=".84">sedan</option>
-         </select>
-         <br>
-         <div class="averageMiles">
-            <label for="milesPerGallon">How many miles do you travel per week?</label>
-            <input id="miles" class="form-control" placeholder="enter your miles/week here" type="number">
+        <label name="recycling" for="recycling">Which of these do you recycle?</label>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="recycling" value="72.75">
+              aluminum/steel
+            </label>
+            <label>
+              <input type="checkbox" name="recycling" value="72.5">
+              plastic
+            </label>
+            <label>
+              <input type="checkbox" name="recycling" value="72.5">
+              glass
+            </label>
+            <label>
+              <input type="checkbox" name="recycling" value="72.5">
+              papers and magazines
+            </label>
           </div>
-
-        <label for="">Waste A</label><br>
-        <input type="text" name="" value=""><br>
-
-        <label for="">Waste B</label><br>
-        <input type="text" name="" value=""><br>
-
-        <label for="">Waste C</label><br>
-        <input type="text" name="" value=""><br>
 
         <label for="">Food Consumption A</label><br>
         <input type="text" name="" value=""><br>
@@ -70,8 +86,6 @@
         <input type="text" name="" value=""><br>
         <button type="submit" class="btn btn-success" name="button">Estimate!</button>
       </form>
-
-
     </div>
   </body>
 </html>
