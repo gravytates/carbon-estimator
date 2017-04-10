@@ -2,15 +2,45 @@
 
 ##### Epicodus Section: Intro group week- Carbon Estimator
 
-#### By Grady L Shelton, Dana Weiss,  &Ben Williams
+#### By Grady L Shelton, Dana Weiss,  & Ben Williams
 
 ## Description
 
+This group week website takes user input about their day to day activities including how far they travel on a weekly basis, using what modes of transportation, how their house energy is fueled, how much they recycle, and what kind of food they eat to display an estimate for how much carbon dioxide they are responsible for emitting.
+
 Website can be viewed in browser at https://gravytates.github.io/carbon-est
 
-Group week application
-
 ## Specifications
+
+* Program will have the user indicate how many miles they travel per week.
+  * **Example Input** User inputs " '100' miles."
+  * **Example Output** Program allows user to move on to mode of transportation.
+
+* Program indicates whether they drive a car (sedan/wagon, hybrid, small truck, standard truck), take the bus, lightrail, or walk/bike. Mode has a standard CO2 lbs emission that is multiplied by their miles traveled and their transportation CO2 emissions are displayed.
+  * **Example Input** User selects "Bus" and 100 miles.
+  * **Example Output** Transportation CO2 emission: 52 lbs per week.
+
+* Program will prompt user to indicate if they recycle the following items:          
+    aluminum/steel
+    plastic
+    glass
+    newspaper
+    magazines
+  * **Example Input** User selects "aluminum/steel, plastic, glass, newspaper, magazines".
+  * **Example Output** "waste emission: 7.71 lbs CO2/wk".
+
+* Program will prompt user to indicate how many pounds of certain food types they eat per week to see how much CO2/wk the production of this food creates.
+  * **Example Input** User selects "Beef: 2 lbs; Rice: 2 lbs; Vegetables: 5 lbs."
+  * **Example Output** "CO2 emission from food: 69.86 lbs CO2/wk"
+
+* Program will prompt user to indicate what kind of fuel their home energy uses, and how much money is spent on utility.
+  * **Example Input** User selects either "Electricity" and "$44/month"
+  * **Example Output** "CO2 emission from utilities: 941 lbs/wk"
+
+* Upon completion and submission of form, program will return a total CO2 emission in pounds per week
+  * **Example Input** User submits form
+  * **Example Output** "Your weekly CO2 emission per week is: 1070.57 lbs
+
 
 Hey guys!
 
@@ -75,6 +105,8 @@ Transportation co2 reduction techniques:
 
 http://www.greeneatz.com/foods-carbon-footprint.html Ranks food with CO2 output per kilo of food produced. Food is third largest contributor to US household's co2 output. Globally, agriculture contributes to half of our co2 emissions.
 
+kilo multiplied by 2.204 to find pound.
+
 
 
 ## Setup
@@ -94,7 +126,7 @@ HTML, CSS, JavaScript and jQuery
 
 ### Legal
 
-Copyright (c) 2017 **Grady L Shelton**
+Copyright (c) 2017 **Grady L Shelton, Ben Williams, and Dana Weiss**
 
 This software is licensed under the MIT license.
 
