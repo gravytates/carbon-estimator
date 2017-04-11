@@ -39,17 +39,17 @@ Economic.prototype.recyclingTotal = function() {
 };
 
 // this works as of 10am 4/11
-Economic.prototype.foodTotal = function(foodArray) {
+Economic.prototype.foodTotal = function() {
   var foodProduct = 0;
   this.foodArray.forEach(function(item) {
     foodProduct += item;
     console.log("food: " + typeof foodProduct);
-    return foodProduct;
   });
+  return foodProduct;
 };
 
-Economic.prototype.overallTotal = function(mode, miles, electric, natGas, fuel, recyclingArray) {
-  var bigResult = this.modeCarbonTotal(mode, miles) + this.homeCarbonTotal(electric, natGas, fuel) + this.recyclingTotal(recyclingArray);
+Economic.prototype.overallTotal = function(mode, miles, electric, natGas, fuel, recyclingArray, foodArray) {
+  var bigResult = this.modeCarbonTotal(mode, miles) + this.homeCarbonTotal(electric, natGas, fuel) + this.recyclingTotal(recyclingArray) + this.foodTotal(foodArray);
   // console.log(this.recyclingTotal(recyclingArray));
   return bigResult;
 }
@@ -71,7 +71,7 @@ $(document).ready(function() {
     });
     $("input:checkbox[name=food]:checked").each(function(){
       let inputtedFood = parseFloat($(this).val());
-      recycleNFood.foodArray.push(inputtedFood);
+      getCarbonTotal.foodArray.push(inputtedFood);
     });
 
 
@@ -79,6 +79,7 @@ $(document).ready(function() {
     getCarbonTotal.homeCarbonTotal();
     recycleNFood.foodTotal();
     finalResult = getCarbonTotal.overallTotal(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel);
+    $("#finalTotal").text(finalResult);
     console.log("final total: " + finalResult);
     console.log(getCarbonTotal.modeCarbonTotal());
     console.log(getCarbonTotal.homeCarbonTotal());
