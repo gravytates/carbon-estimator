@@ -1,6 +1,6 @@
 //*--Business Logic--*//
 //Mode of Transportation//
-function Economic(mode, miles, electric, natGas, fuel) {
+function Economic(mode, miles, electric, natGas, fuel, wasteProduct) {
   this.mode = mode;
   this.miles = miles;
   this.electric = electric;
@@ -8,53 +8,52 @@ function Economic(mode, miles, electric, natGas, fuel) {
   this.fuel = fuel;
   this.recyclingArray = [];
   this.foodArray = [];
+  this.wasteProduct = wasteProduct;
 }
 
 //Prototype for Mode of Transportation//
 Economic.prototype.modeCarbonTotal = function(mode, miles) {
   var transportProduct = this.mode * this.miles;
+  console.log("trans: " + transportProduct);
   return transportProduct;
 }
 
 Economic.prototype.homeCarbonTotal = function(electric) {
   var electricEnergyProduct = this.electric * 10.546;
+  if (this.natGas <= 9.5) {this.natGas = 9.5};
   var natGasProduct = (this.natGas - 9.5) * 8.846;
   var fuelProduct = this.fuel * 7.59
   var homeEnergyProduct = electricEnergyProduct + natGasProduct + fuelProduct;
+  console.log("home: " + homeEnergyProduct);
   return homeEnergyProduct;
 }
 
-Economic.prototype.recyclingTotal = function(recyclingArray) {
+// this works as of 10am 4/11
+Economic.prototype.recyclingTotal = function() {
   var wasteProduct = 692;
   this.recyclingArray.forEach(function(recyclable) {
     wasteProduct -= recyclable;
+    console.log("recycle: " + wasteProduct);
+    var waste = new Economic(wasteProduct);
     return wasteProduct;
   });
 };
 
+// this works as of 10am 4/11
 Economic.prototype.foodTotal = function(foodArray) {
   var foodProduct = 0;
-  console.log(foodArray);
   this.foodArray.forEach(function(item) {
     foodProduct += item;
-    console.log(foodProduct);
+    console.log("food: " + typeof foodProduct);
     return foodProduct;
   });
 };
 
-
-//natural gas
-// take the price of the bill, subtract 9.50, multiply by .7323. that's how many therms 12.08 pounds per therm. src: nwNatural
-
-// fuel oil
-// 22.40lbsCO2/gallon, $2.95 per gallon (if you buy 100 gallons)
-//http://best-heating-oil.com/heating-oil-pricing/
-
-//electricity
-// 8.63 kWh per $1 spent in a day, 1.222 lbs co2 per/kwh https://carbonfund.org/how-we-calculate/    https://www.epa.gov/sites/production/files/2015-10/documents/egrid2012_summarytables_0.pdf PG&E customer bill portland
-
-
-
+Economic.prototype.overallTotal = function(mode, miles, electric, natGas, fuel, recyclingArray) {
+  var bigResult = this.modeCarbonTotal(mode, miles) + this.homeCarbonTotal(electric, natGas, fuel);
+  console.log(parseFloat(this.waste));
+  return bigResult;
+}
 
 //*--User Interface--*//
 $(document).ready(function() {
@@ -71,18 +70,26 @@ $(document).ready(function() {
         recycleNFood.recyclingArray.push(inputtedRecycling);
     });
     $("input:checkbox[name=food]:checked").each(function(){
-        let inputtedFood = parseFloat($(this).val());
-        recycleNFood.foodArray.push(inputtedFood);
+      let inputtedFood = parseFloat($(this).val());
+      recycleNFood.foodArray.push(inputtedFood);
     });
+
+
+
+
+
+
+
+    var finalTotal = new Economic(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel, recycleNFood.recyclingArray);
     var getCarbonTotal = new Economic(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel);
     getCarbonTotal.modeCarbonTotal();
     getCarbonTotal.homeCarbonTotal();
     recycleNFood.recyclingTotal();
     recycleNFood.foodTotal();
-    // console.log(getCarbonTotal.modeCarbonTotal());
-    // console.log(getCarbonTotal.homeCarbonTotal());
+    finalResult = finalTotal.overallTotal(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel, recycleNFood.recyclingArray);
+    console.log("final total: " + finalResult);
+    console.log(getCarbonTotal.modeCarbonTotal());
+    console.log(getCarbonTotal.homeCarbonTotal());
     // console.log(recycleNFood.recyclingArray);
-    // console.log(recycleNFood.foodArray);
-    // console.log(newCarbonTotal.recyclingTotal());
   });
 });
