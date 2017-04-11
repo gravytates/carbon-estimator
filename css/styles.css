@@ -1,6 +1,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
 #header {
   position: fixed;
   padding-top: 50px;
@@ -8,6 +9,13 @@ body {
   margin-top: 50px;
   background-color: rgb(195, 226, 163);
   width: 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#content {
+  padding-left: 10%;
+  width: 90%;
 }
 
 .intro {
@@ -19,6 +27,13 @@ body {
   margin-left: 40px;
 }
 
+form {
+  margin-left: 35%;
+}
+
+input {
+  max-width: 20%;
+}
 
 .pages {
   padding-left: 10px;
@@ -29,6 +44,7 @@ body {
 }
 
 h1 {
+  letter-spacing: 2px;
   margin-top: 0px;
   padding-top: 35px;
   padding-left: 20px;
