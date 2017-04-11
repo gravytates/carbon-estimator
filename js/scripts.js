@@ -7,6 +7,7 @@ function Economic(mode, miles, electric, natGas, fuel) {
   this.natGas = natGas;
   this.fuel = fuel;
   this.recyclingArray = [];
+  this.foodArray = [];
 }
 
 //Prototype for Mode of Transportation//
@@ -50,11 +51,16 @@ $(document).ready(function() {
         let inputtedRecycling = parseFloat($(this).val());
         transportation.recyclingArray.push(inputtedRecycling);
     });
+    $("input:checkbox[name=food]:checked").each(function(){
+        let inputtedFood = parseFloat($(this).val());
+        transportation.foodArray.push(inputtedFood);
+    });
     var getCarbonTotal = new Economic(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel);
     getCarbonTotal.modeCarbonTotal();
     getCarbonTotal.homeCarbonTotal();
     console.log(getCarbonTotal.modeCarbonTotal());
     console.log(getCarbonTotal.homeCarbonTotal());
     console.log(transportation.recyclingArray);
+    console.log(transportation.foodArray);
   });
 });
