@@ -1,60 +1,85 @@
 //*--Business Logic--*//
 //Mode of Transportation//
-function Economic(mode, miles, electric, natGas, fuel) {
+function Economic(mode, miles, electric, natGas, fuel, wasteProduct) {
   this.mode = mode;
   this.miles = miles;
   this.electric = electric;
   this.natGas = natGas;
   this.fuel = fuel;
   this.recyclingArray = [];
+  this.foodArray = [];
+  this.wasteProduct = wasteProduct;
 }
 
 //Prototype for Mode of Transportation//
 Economic.prototype.modeCarbonTotal = function(mode, miles) {
   var transportProduct = this.mode * this.miles;
-  return transportProduct;
+  console.log("trans: " + transportProduct);
+  return (transportProduct * 4.33);
 }
 
 Economic.prototype.homeCarbonTotal = function(electric) {
-  var electricEnergyProduct = this.electric * 10.546;
-  var natGasProduct = (this.natGas - 9.5) * 8.846;
-  var fuelProduct = this.fuel * 7.59
+  var electricEnergyProduct = this.electric * 10.55;
+  if (this.natGas <= 9.5) {this.natGas = 9.5};
+  var natGasProduct = (this.natGas - 9.5) * 8.85;
+  var fuelProduct = this.fuel * 7.59;
   var homeEnergyProduct = electricEnergyProduct + natGasProduct + fuelProduct;
+  console.log("home: " + homeEnergyProduct);
   return homeEnergyProduct;
 }
 
-//natural gas
-// take the price of the bill, subtract 9.50, multiply by .7323. that's how many therms 12.08 pounds per therm. src: nwNatural
+// this works as of 10am 4/11
+Economic.prototype.recyclingTotal = function() {
+  var wasteProduct = 692;
+  this.recyclingArray.forEach(function(recyclable) {
+    wasteProduct -= recyclable;
+    console.log("recycle: " + wasteProduct);
+  });
+  return (wasteProduct / 12);
+};
 
-// fuel oil
-// 22.40lbsCO2/gallon, $2.95 per gallon (if you buy 100 gallons)
-//http://best-heating-oil.com/heating-oil-pricing/
+// this works as of 10am 4/11
+Economic.prototype.foodTotal = function() {
+  var foodProduct = 0;
+  this.foodArray.forEach(function(item) {
+    foodProduct += item;
+    console.log("food: " + typeof foodProduct);
+  });
+  return foodProduct;
+};
 
-//electricity
-// 8.63 kWh per $1 spent in a day, 1.222 lbs co2 per/kwh https://carbonfund.org/how-we-calculate/    https://www.epa.gov/sites/production/files/2015-10/documents/egrid2012_summarytables_0.pdf PG&E customer bill portland
-
-
-
+Economic.prototype.overallTotal = function(mode, miles, electric, natGas, fuel, recyclingArray, foodArray) {
+  var bigResult = this.modeCarbonTotal(mode, miles) + this.homeCarbonTotal(electric, natGas, fuel) + this.recyclingTotal(recyclingArray) + this.foodTotal(foodArray);
+  return bigResult.toFixed(2);
+}
 
 //*--User Interface--*//
 $(document).ready(function() {
-  var transportation = new Economic();
   $("#input").submit(function(e) {
     e.preventDefault();
+    var recycleNFood = new Economic();
     var inputtedMode = $("#mode").val();
     var inputtedMiles = $("#miles").val();
     var inputtedElectric = $("#electricity").val();
     var inputtedNatGas = $("#natgas").val();
     var inputtedFuel = $("#fuel").val();
+    var getCarbonTotal = new Economic(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel);
     $("input:checkbox[name=recycling]:checked").each(function(){
         let inputtedRecycling = parseFloat($(this).val());
-        transportation.recyclingArray.push(inputtedRecycling);
+        getCarbonTotal.recyclingArray.push(inputtedRecycling);
     });
-    var getCarbonTotal = new Economic(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel);
+    $("input:checkbox[name=food]:checked").each(function(){
+      let inputtedFood = parseFloat($(this).val());
+      getCarbonTotal.foodArray.push(inputtedFood);
+    });
+
     getCarbonTotal.modeCarbonTotal();
     getCarbonTotal.homeCarbonTotal();
+    recycleNFood.foodTotal();
+    finalResult = getCarbonTotal.overallTotal(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel);
+    $("#finalTotal").html("You are responsible for emitting " + finalResult + 'lbs of CO<sub>2</sub> per month!');
+    console.log("final total: " + finalResult);
     console.log(getCarbonTotal.modeCarbonTotal());
     console.log(getCarbonTotal.homeCarbonTotal());
-    console.log(transportation.recyclingArray);
   });
 });
