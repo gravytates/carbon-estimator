@@ -1,8 +1,8 @@
 # Carbon Estimator
 
-##### Epicodus Section: Intro group week- Carbon Estimator
+##### Epicodus Section: Intro group week - Carbon Estimator
 
-#### By Grady L Shelton, Dana Weiss,  & Ben Williams
+#### By Grady L Shelton, Dana Weiss, & Ben Williams
 
 ## Description
 
