@@ -15,33 +15,37 @@
   </head>
   <body>
     <h1>Estimate your Carbon!</h1>
+    <br>
     <div id="header">
       <div id="content">
         <h4>
           <p></p>
-          <a class="pages" id="homePage" href="index.html">Homepage: Calculator</a>
-          <a class="pages" href="why.html">Why estimate your Carbon?</a>
-          <a class="pages" href="ways.html">Ways to reduce Carbon output</a>
-          <a class="pages" href="links.html">Further Discovery</a>
-          <a class="pages" href="methods.html">Methods</a>
+          <ul class="nav nav-pills nav-justified">
+            <li role="presentation" class="active"><a href="index.html">home</a></li>
+            <li role="presentation"><a href="why.html">why carbon?</a></li>
+            <li role="presentation"><a href="ways.html">reduce carbon output</a></li>
+            <li role="presentation"><a href="links.html">further exploration</a></li>
+            <li role="presentation"><a href="methods.html">our methods</a></li>
+          </ul>
           <p></p>
         </h4>
       </div>
     </div>
-    </div>
     <div class="container">
       <p class="intro">
-        because reasons! Lorem ipsum lorem ipsum....
+
       </p>
       <form id="input" class="" action="index.html" method="post">
         <div class="monthlyBill">
          <label for="monthlyBill">On average, how much do you pay per month for natural gas?</label>
          <input id="natgas" class="form-control" placeholder="enter your avg. monthly bill" type="number" min="0">
         </div>
+        <br>
         <div class="monthlyBill">
           <label for="monthlyBill">On average, how much do you pay per month for fuel oil?</label>
           <input id="fuel" class="form-control" placeholder="enter your avg. monthly bill" type="number" min="0">
         </div>
+        <br>
         <div class="monthlyElectric">
           <label for="monthlyElectric">How much do you pay for electricity each month?</label><br>
           <input id="electricity" class="form-control" type="number" min="0" value=""placeholder="enter your avg monthly bill"><br>
@@ -61,11 +65,12 @@
           <option value=".84">sedan</option>
         </select>
         <br>
+        <br>
         <div class="averageMiles">
           <label for="milesPerGallon">How many miles do you travel per week?</label>
           <input id="miles" class="form-control" placeholder="enter your miles/week here" type="number" min="0">
         </div>
-
+        <br>
         <label name="recycling" for="recycling">Which of these do you recycle?</label>
           <div class="checkbox">
             <label>
@@ -85,7 +90,74 @@
               papers and magazines
             </label>
           </div>
-
+          <br>
+          <label name="foodConsumption" for="foodConsumption">Which of these food items do you regularly consume?</label>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="food" value="86.44">
+                lamb
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="59.44">
+                beef
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="29.77">
+                cheese
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="26.68">
+                pork
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="24">
+                turkey
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="15.21">
+                chicken
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="13.45">
+                tuna
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="10.58">
+                eggs
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="6.39">
+                potatoes
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="5.95">
+                rice
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="5.07">
+                nuts
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="4.41">
+                beans/tofu
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="4.41">
+                vegetables
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="4.19">
+                milk
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="2.43">
+                fruit
+              </label>
+              <label>
+                <input type="checkbox" name="food" value="1.99">
+                lentils
+              </label>
+           </div>    
           <label name="foodConsumption" for="foodConsumption">Which of these food items do you regularly consume?</label>
             <div class="checkbox">
               <label>
@@ -153,7 +225,6 @@
                 lentils
               </label>
             </div>
-
 
         <button type="submit" class="btn btn-success" name="button">Estimate!</button>
       </form>
