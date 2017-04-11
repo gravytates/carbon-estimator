@@ -34,9 +34,8 @@ Economic.prototype.recyclingTotal = function() {
   this.recyclingArray.forEach(function(recyclable) {
     wasteProduct -= recyclable;
     console.log("recycle: " + wasteProduct);
-    var waste = new Economic(wasteProduct);
-    return wasteProduct;
   });
+  return wasteProduct;
 };
 
 // this works as of 10am 4/11
@@ -50,8 +49,8 @@ Economic.prototype.foodTotal = function(foodArray) {
 };
 
 Economic.prototype.overallTotal = function(mode, miles, electric, natGas, fuel, recyclingArray) {
-  var bigResult = this.modeCarbonTotal(mode, miles) + this.homeCarbonTotal(electric, natGas, fuel);
-  console.log(parseFloat(this.waste));
+  var bigResult = this.modeCarbonTotal(mode, miles) + this.homeCarbonTotal(electric, natGas, fuel) + this.recyclingTotal(recyclingArray);
+  // console.log(this.recyclingTotal(recyclingArray));
   return bigResult;
 }
 
@@ -65,9 +64,10 @@ $(document).ready(function() {
     var inputtedElectric = $("#electricity").val();
     var inputtedNatGas = $("#natgas").val();
     var inputtedFuel = $("#fuel").val();
+    var getCarbonTotal = new Economic(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel);
     $("input:checkbox[name=recycling]:checked").each(function(){
         let inputtedRecycling = parseFloat($(this).val());
-        recycleNFood.recyclingArray.push(inputtedRecycling);
+        getCarbonTotal.recyclingArray.push(inputtedRecycling);
     });
     $("input:checkbox[name=food]:checked").each(function(){
       let inputtedFood = parseFloat($(this).val());
@@ -75,18 +75,10 @@ $(document).ready(function() {
     });
 
 
-
-
-
-
-
-    var finalTotal = new Economic(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel, recycleNFood.recyclingArray);
-    var getCarbonTotal = new Economic(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel);
     getCarbonTotal.modeCarbonTotal();
     getCarbonTotal.homeCarbonTotal();
-    recycleNFood.recyclingTotal();
     recycleNFood.foodTotal();
-    finalResult = finalTotal.overallTotal(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel, recycleNFood.recyclingArray);
+    finalResult = getCarbonTotal.overallTotal(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel);
     console.log("final total: " + finalResult);
     console.log(getCarbonTotal.modeCarbonTotal());
     console.log(getCarbonTotal.homeCarbonTotal());
