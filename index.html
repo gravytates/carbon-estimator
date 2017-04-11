@@ -23,7 +23,7 @@
           <ul class="nav nav-pills nav-justified">
             <li role="presentation" class="active"><a href="index.html">home</a></li>
             <li role="presentation"><a href="why.html">why carbon?</a></li>
-            <li role="presentation"><a href="ways.html">reduce your carbon output</a></li>
+            <li role="presentation"><a href="ways.html">reduce carbon output</a></li>
             <li role="presentation"><a href="links.html">further exploration</a></li>
             <li role="presentation"><a href="methods.html">our methods</a></li>
           </ul>
@@ -41,14 +41,17 @@
          <label for="monthlyBill">On average, how much do you pay per month for natural gas?</label>
          <input id="natgas" class="form-control" placeholder="enter your avg. monthly bill" type="number" min="0">
         </div>
+        <br>
         <div class="monthlyBill">
           <label for="monthlyBill">On average, how much do you pay per month for fuel oil?</label>
           <input id="fuel" class="form-control" placeholder="enter your avg. monthly bill" type="number" min="0">
         </div>
+        <br>
         <div class="monthlyElectric">
           <label for="monthlyElectric">How much do you pay for electricity each month?</label><br>
-          <input id="electricity" class="form-control" type="number" min="0" value=""placeholder="enter your avg monthly bill"><br>
+          <input id="electricity" class="form-control" type="number" min="0" value=""placeholder="enter your avg monthly bill">
         </div>
+        <br>
         <label for="modeOfTransportation">What is your primary mode of transportation?</label>
         <br>
         <select id="mode">
@@ -64,11 +67,12 @@
           <option value=".84">sedan</option>
         </select>
         <br>
+        <br>
         <div class="averageMiles">
           <label for="milesPerGallon">How many miles do you travel per week?</label>
           <input id="miles" class="form-control" placeholder="enter your miles/week here" type="number" min="0">
         </div>
-
+        <br>
         <label name="recycling" for="recycling">Which of these do you recycle?</label>
           <div class="checkbox">
             <label>
@@ -88,7 +92,7 @@
               papers and magazines
             </label>
           </div>
-
+          <br>
           <label name="foodConsumption" for="foodConsumption">Which of these food items do you regularly consume?</label>
             <div class="checkbox">
               <label>
@@ -157,7 +161,7 @@
               </label>
             </div>
 
-
+        <br>
         <button type="submit" class="btn btn-success" name="button">Estimate!</button>
       </form>
       <div class="results">
