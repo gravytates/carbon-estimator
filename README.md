@@ -113,7 +113,7 @@ kilo multiplied by 2.204 to find pound.
 
 
 ## Known Bugs
-
+Preponderance of Scorpio
 
 
 ## Contact
@@ -122,7 +122,7 @@ Please contact Grady L Shelton at gradyish@gmail.com if you have any questions.
 
 ## Technologies Used
 
-HTML, CSS, JavaScript and jQuery
+HTML, CSS, Bootstrap, JavaScript and jQuery
 
 ### Legal
 

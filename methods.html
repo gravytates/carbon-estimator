@@ -30,10 +30,24 @@
     <div class="container">
       <div class="well">
         <h2 class="intro">Our methods behind the numbers</h2>
-          <p>Our calculations are based on finding the price per given unit for home energy. The price indicates how much of that energy was consumed in the home, and we then calculate the carbon pollution for that amount of usage. We have worked to find prices accurate for the greater Portland area. Calculations for the amount of energy per dollar were based on pricing from PG&E. Natural gas per dollar was based on pricing from NWNatural. Fuel oil was harder to find consistent numbers for. Prices varied greatly depending on supplier or on how much fuel was purchased. Our pricing was based on $2.95 per gallon, which is a middle-of-the-road figure taken from Best Heating Oil's pricing for a purchase of 100 gallons or more. <br>
-          More accurate results could be drawn from users knowing the exact amount of elecrticity or heating method that they use. We decided to calculate based on pricing in order to emphasize accessibility as we found that more people were aware of their monthly bill than of the units of fuel that they used over the same period. <br>
-          The pollution from electricity use can vary greatly depending upon the state. This is because some states have more renewable production in their supplies than others. The electricity grid for the North West (922.3 lb/MWh) produces slightly less CO2 equivalent than the US average (1,150.3 lb/MWh).
+          <h3>Home Energy</h3>
+          <p>Our calculations for home energy were based on finding the price per given unit. The price indicates how much of that energy was consumed in a home, and we then calculate the carbon pollution for that amount of usage. We have worked to find prices accurate for the greater Portland area. Calculations for the amount of energy per dollar were based on pricing from PG&E. Natural gas per dollar was based on pricing from NWNatural. Fuel oil was harder to find consistent numbers for. Prices varied greatly depending on supplier or on how much fuel was purchased. Our pricing was based on $2.95 per gallon, which is a middle-of-the-road figure taken from Best Heating Oil's pricing for a purchase of 100 gallons or more. <br><br>
+          More accurate results could be drawn from users who know the exact amount of elecrticity or heating method that they use. We decided to calculate based on pricing in order to emphasize accessibility as we found that more people were aware of their monthly bill than of the units of fuel that they used over the same period. <br><br>
+          The pollution from electricity use can vary greatly depending upon the state. This is because some states have more renewable production in their supplies than others. The electricity grid for the Northwest (922.3 lb/MWh) produces slightly less CO2 equivalent than the US average (1,150.3 lb/MWh). Oregon has the 4th lowest per capita CO<sub>2</sub> pollution of all US states, but it's relatively low energy production may be a factor in this figure..
         </p>
+        <h3>Transportation Methods</h3>
+        <p>Our vehicle emission coefficients were based on average mpg values found at fueleconomy.gov. Truck fuel efficiencies in particular have steadily increased over the years, so we added an additional option to select and utilize older trucks’ mpg, setting 2012 models to 15mpg. </p>
+        <p>For other classes of vehicles we used data from 2016 models. This data was also based on fueleconomy.gov, but for time constraints, we relied on a <a href=”https://www.cars.com/articles/best-and-worst-gas-mileage-2016-1420683223195/”>cars.com</a> review of this data. We found that avg. hybrid mpg is 50mpg, avg sedan/wagons have 23.7 mpg, avg small pickups have 21 mpg, and standard pickups have 18 mpg. Using this data with known CO<sub>2</sub> standards found at <a href=”https://www3.epa.gov/carbon-footprint-calculator/”>epa.gov</a> allowed us to convert mpg to pounds of CO<sub>2</sub> emitted per mile. These standard multipliers came out to be:</p>
+        <ul>
+        <li>2012 truck: 1.32 lbs CO<sub>2</sub>/mi </li>
+        <li>Hybrid: 0.39 lbs CO<sub>2</sub>/mi </li>
+        <li>Sedan/Wagon: 0.84 lbs CO<sub>2</sub>/mi </li>
+        <li>Small Pickup: 0.94 lbs CO<sub>2</sub>/mi  </li>
+        <li>Standard Pickup: 1.1 lbs CO<sub>2</sub>/mi </li>
+        </ul>
+        <p>For MAX lightrail and bus lbs CO<sub>2</sub> output, we reviewed and used data from a <a href=”https://www.transit.dot.gov/sites/fta.dot.gov/files/docs/PublicTransportationsRoleInRespondingToClimateChange2010.pdf”>transit.dot.gov</a> study in 2010. The study found and explicitly stated a nationwide average for lightrail being 0.36 lbs CO<sub>2</sub>/mi (0.14 if full occupancy), and a Portland Metro area average for busses being 0.56 lbs CO<sub>2</sub>/mi (0.18 if full occupancy).</p>
+        <h3>Food</h3>
+        <p>We found a <a href="http://www.greeneatz.com/foods-carbon-footprint.html">site</a> that shows CO2 output per kilo consumed for a variety of foods. We adjusted for time and units to achieve an accurate calculation.</p>
       </div>
     </div>
   </body>
