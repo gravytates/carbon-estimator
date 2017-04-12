@@ -2,6 +2,7 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+
 #header {
   position: fixed;
   padding-top: 50px;
@@ -22,18 +23,13 @@ body {
   margin-top: 210px;
 }
 
-#homePage {
-  border: none;
-  margin-left: 40px;
-}
-
 form {
-  text-align: center;
+  /*text-align: center;*/
   border-radius: solid black 2px;
 }
 
 input {
-  margin-left: 35%;
+  /*margin-left: 35%;*/
   max-width: 29%;
 }
 
@@ -55,4 +51,15 @@ h1 {
   background-color: rgb(195, 226, 163);
   width: 100%;
   z-index: 1;
+}
+
+.container {
+  /*text-align: center;*/
+  justify-content: left;
+  padding-left: 15%;
+  /*text-align: center;*/
+}
+
+.results {
+  display: none;
 }

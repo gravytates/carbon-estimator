@@ -77,7 +77,8 @@ $(document).ready(function() {
     getCarbonTotal.homeCarbonTotal();
     recycleNFood.foodTotal();
     finalResult = getCarbonTotal.overallTotal(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel);
-    $("#finalTotal").html("You are responsible for emitting " + finalResult + 'lbs of CO<sub>2</sub> per month!');
+    $("#finalTotal").html(finalResult);
+    $(".results").show();
     console.log("final total: " + finalResult);
     console.log(getCarbonTotal.modeCarbonTotal());
     console.log(getCarbonTotal.homeCarbonTotal());
