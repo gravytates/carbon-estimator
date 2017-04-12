@@ -79,6 +79,15 @@ $(document).ready(function() {
     finalResult = getCarbonTotal.overallTotal(inputtedMode, inputtedMiles, inputtedElectric, inputtedNatGas, inputtedFuel);
     $("#finalTotal").html(finalResult);
     $(".results").show();
+
+    if (finalResult >= 958.3) {
+      $("#higher").show();
+      $("#lower").hide();
+    } else {
+      $("#lower").show();
+      $("#higher").hide();
+    }
+
     console.log("final total: " + finalResult);
     console.log(getCarbonTotal.modeCarbonTotal());
     console.log(getCarbonTotal.homeCarbonTotal());

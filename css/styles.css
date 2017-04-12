@@ -90,6 +90,14 @@ input {
   text-transform: uppercase;
 }
 
+#lower {
+  display: none;
+}
+
+#higher {
+  display: none;
+}
+
 
 /*ul.nav.nav-tabs {
   background-color: white;
