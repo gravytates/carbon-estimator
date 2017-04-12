@@ -1,8 +1,10 @@
 body {
 font-family: 'Montserrat', sans-serif;
-
 }
 
+* {
+  border: solid black 2px;
+}
 h1 {
   margin-top: 0px;
   padding-top: 45px;
@@ -19,14 +21,34 @@ h1 {
   font-size: 60px;
 }
 
-form {
-  border-radius: solid black 2px;
-}
-
 input {
   max-width: 50%;
 }
 
+h2 {
+  text-align: center;
+  font-family: "HCo Verlag", "CenturyGothic",  sans-serif;
+  font-size: 200%;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h3 {
+  text-align: center;
+  font-family: "HCo Verlag", "CenturyGothic",  sans-serif;
+  font-size: 150%;
+  letter-spacing: 2px;
+}
+
+ul li{
+  width: 90%;
+  margin: auto;
+}
+
+li {
+  width: 90%;
+  margin: auto;
+}
 #background {
   background-image: url("../img/greenrays.jpg");
   background-size: cover;
@@ -52,31 +74,23 @@ input {
 }
 
 #content {
-  padding-left: 10%;
-  width: 90%;
+  margin: auto;
+  width: 60%;
+}
+
+#carbonQuiz {
+  margin: auto;
+  width: 56%
 }
 
 .well {
-  margin-top: 20%;
-  max-width: 90%;
-  background-color: rgba(255, 255, 255, 0.95);
-}
-
-.intro {
-  margin-top: 210px;
-}
-
-.pages {
-  padding-left: 10px;
-  padding-right: 10px;
-  float: left;
-  border-left: solid grey 1px;
-  margin-right: 0px;
-}
-
-.container {
+  border-radius: solid white 2px;
+  padding: auto;
   justify-content: left;
-  padding-left: 15%;
+  margin: auto;
+  margin-top: 18%;
+  width: 70%;
+  background-color: rgba(255, 255, 255, 0.97);
 }
 
 .results {
@@ -85,21 +99,7 @@ input {
 
 .nav {
   font-family: "HCo Verlag", "CenturyGothic",  sans-serif;
-  font-size: 14px;
+  font-size: 100%;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
-
-
-/*ul.nav.nav-tabs {
-  background-color: white;
-}
-ul.nav.nav-tabs li {
-  padding: 10px;
-  margin: 5px;
-  background-color: white;
-  opacity: 1;
-}
-ul.nav.nav-tabs li a {
-  color: white;
-}*/
