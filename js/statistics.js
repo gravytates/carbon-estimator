@@ -92,6 +92,7 @@ Statistics.prototype.pValue3 = function(){
 // COHORT CONSTRUCTOR WITH EMISSION DATA
 function Cohort(){
   this.emissions = [];
+  this.empty = [];
 }
 
 // FIND COHORTS TOTAL CO2
@@ -135,11 +136,17 @@ $(function(){
     let introCohort = new Statistics();
     let introData = new Cohort();
     $("#intro-class input").each(function(){
-      let emission = parseFloat($(this).val());
-      introData.emissions.push(emission);
+      input = $(this).val();
+      if (input.match(/^[0-9]+([,.][0-9]+)?$/g)) {
+        emission = parseFloat(input);
+        introData.emissions.push(emission);
+      } else {
+        introData.empty.push(emission);
+      }
     });
     all3Cohorts.cohorts.push(introData);
     console.log(all3Cohorts.cohorts[0].totalCarbon());
+    console.log(introData.emissions.length);
     let totalC = introData.totalCarbon();
     let averageC = (introData.averageCarbon()).toFixed(2);
     let stdDev = (introData.standardDeviation()).toFixed(2);
@@ -154,8 +161,13 @@ $(function(){
     let javaCohort = new Statistics();
     let javaData = new Cohort();
     $("#java-class input").each(function(){
-      let emission = parseFloat($(this).val());
-      javaData.emissions.push(emission);
+      input = $(this).val();
+      if (input.match(/^[0-9]+([,.][0-9]+)?$/g)) {
+        emission = parseFloat(input);
+        javaData.emissions.push(emission);
+      } else {
+        javaData.empty.push(emission);
+      }
     });
     all3Cohorts.cohorts.push(javaData);
     console.log(all3Cohorts.cohorts[1].totalCarbon());
@@ -165,7 +177,6 @@ $(function(){
     $("#javaTotal").text(totalC);
     $("#javaAverage").text(averageC);
     $("#javaStDev").text(stdDev);
-
   })
 
 
@@ -174,8 +185,13 @@ $(function(){
     let jSCohort = new Statistics();
     let jSData = new Cohort();
     $("#jS-class input").each(function(){
-      let emission = parseFloat($(this).val());
-      jSData.emissions.push(emission);
+      input = $(this).val();
+      if (input.match(/^[0-9]+([,.][0-9]+)?$/g)) {
+        emission = parseFloat(input);
+        jSData.emissions.push(emission);
+      } else {
+        jSData.empty.push(emission);
+      }
     });
     all3Cohorts.cohorts.push(jSData);
     console.log(all3Cohorts.cohorts[2].averageCarbon());
@@ -185,7 +201,6 @@ $(function(){
     $("#jSTotal").text(totalC);
     $("#jSAverage").text(averageC);
     $("#jSStDev").text(stdDev);
-
   })
 
 // BUTTON FUNCTION TO CALL T TEST BETWEEN INTRO AND JAVA
