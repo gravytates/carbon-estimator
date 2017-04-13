@@ -142,3 +142,22 @@ ul {
   display: none;
   border: 2px;
 }
+
+#nullTrue1 {
+  display: none;
+}
+#nullTrue2 {
+  display: none;
+}
+#nullTrue3 {
+  display: none;
+}
+#nullFalse1 {
+  display: none;
+}
+#nullFalse2 {
+  display: none;
+}
+#nullFalse3 {
+  display: none;
+}

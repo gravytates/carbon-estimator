@@ -9,14 +9,17 @@ function Statistics(){
 Statistics.prototype.runTTest1 = function() {
   var tTest = 0;
   var introAvg = this.cohorts[0].averageCarbon();
-  var introSDsq = this.cohorts[0].standardDeviation() ** 2;
+  var introSD = this.cohorts[0].standardDeviation();
+  var introSDsq = introSD * introSD;
   var introN = this.cohorts[0].emissions.length;
   var javaAvg = this.cohorts[1].averageCarbon();
-  var javaSDsq = this.cohorts[1].standardDeviation() ** 2;
+  var javaSD = this.cohorts[1].standardDeviation();
+  var javaSDsq = javaSD * javaSD;
   var javaN = this.cohorts[1].emissions.length;
 
-  tTest = Math.abs(introAvg - javaAvg) / (Math.sqrt((introSDsq/introN) + (javaSDsq/javaN)));
+  tTest = Math.abs(introAvg - javaAvg) / (Math.sqrt((introSDsq + javaSDsq)/introN));
 
+  console.log(introAvg);
   return tTest;
 }
 
@@ -25,13 +28,15 @@ Statistics.prototype.runTTest1 = function() {
 Statistics.prototype.runTTest2 = function() {
   var tTest = 0;
   var introAvg = this.cohorts[0].averageCarbon();
-  var introSDsq = this.cohorts[0].standardDeviation() ** 2;
+  var introSD = this.cohorts[0].standardDeviation();
+  var introSDsq = introSD * introSD;
   var introN = this.cohorts[0].emissions.length;
   var jSAvg = this.cohorts[2].averageCarbon();
-  var jSSDsq = this.cohorts[2].standardDeviation() ** 2;
+  var jSSD = this.cohorts[2].standardDeviation();
+  var jSSDsq = jSSD * jSSD;
   var jSN = this.cohorts[2].emissions.length;
 
-  tTest = Math.abs(introAvg - jSAvg) / (Math.sqrt((introSDsq/introN) + (jSSDsq/jSN)));
+  tTest = Math.abs(introAvg - jSAvg) / (Math.sqrt((introSDsq + jSSDsq)/jSN));
 
   return tTest;
 }
@@ -40,13 +45,15 @@ Statistics.prototype.runTTest2 = function() {
 Statistics.prototype.runTTest3 = function() {
   var tTest = 0;
   var javaAvg = this.cohorts[1].averageCarbon();
-  var javaSDsq = this.cohorts[1].standardDeviation() ** 2;
+  var javaSD = this.cohorts[1].standardDeviation();
+  var javaSDsq = javaSD * javaSD;
   var javaN = this.cohorts[1].emissions.length;
   var jSAvg = this.cohorts[2].averageCarbon();
-  var jSSDsq = this.cohorts[2].standardDeviation() ** 2;
+  var jSSD = this.cohorts[2].standardDeviation();
+  var jSSDsq = jSSD * jSSD;
   var jSN = this.cohorts[2].emissions.length;
 
-  tTest = Math.abs(javaAvg - jSAvg) / (Math.sqrt((javaSDsq/javaN) + (jSSDsq/jSN)));
+  tTest = Math.abs(javaAvg - jSAvg) / (Math.sqrt((javaSDsq + jSSDsq)/jSN));
 
   return tTest;
 }
@@ -189,6 +196,11 @@ $(function(){
     dF = all3Cohorts.pValue1();
     console.log(dF);
     $("#intro-java-dF-result").text(dF);
+    if (tValue >= 2.021) {
+      $("#nullTrue1").show();
+    } else {
+      $("#nullFalse1").show();
+    }
   })
 
 // BUTTON FUNCTION TO CALL T TEST BETWEEN INTRO AND JAVASCRIPT
@@ -199,6 +211,11 @@ $(function(){
     dF = all3Cohorts.pValue2();
     console.log(dF);
     $("#intro-jS-dF-result").text(dF);
+    if (tValue >= 2.021) {
+      $("#nullTrue2").show();
+    } else {
+      $("#nullFalse2").show();
+    }
   })
 
 // BUTTON FUNCTION TO CALL T TEST BETWEEN JAVA AND JAVASCRIPT
@@ -209,6 +226,11 @@ $(function(){
     dF = all3Cohorts.pValue3();
     console.log(dF);
     $("#java-jS-dF-result").text(dF);
+    if (tValue >= 2.021) {
+      $("#nullTrue3").show();
+    } else {
+      $("#nullFalse3").show();
+    }
   })
 
 });

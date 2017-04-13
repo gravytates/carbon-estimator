@@ -33,7 +33,7 @@
         <h3>A t-test to help help see differences between results.</h3>
 
         <p>
-          Our t-test can analyze emission results between two cohorts at a time to see if there is a statistically valid difference between groups. Using data methods like sample size, average, and standard deviation, we can produce <em>degrees of freedom</em> and a <em>t-result</em>. To get an exact p-value would require some fancy integral calculus that we just don't have the time for, but by using our results, and setting an alpha of 0.05, we can ascertain whether or not two data-sets are different with a 95% confidence interval. That's a pretty high bar for most!
+          Our t-test can analyze emission results between two cohorts at a time to see if there is a statistically valid difference between groups. Using data methods like sample size, average, and standard deviation, we can produce <em>degrees of freedom</em> and a <em>t-result</em>. To get an exact p-value would require some fancy integral calculus that we just don't have the time for, but by using our results, and setting an alpha of 0.05, we can ascertain whether or not two data-sets are different with a 95% confidence interval. That's a pretty high bar for most! Our null hypothesis is that the two averages are similar (data is within 95% normal distribution). If the null hypothesis is rejected, this means the two cohorts are statistically different! One big assumption to be made with t-tests are that the variances are equal (roughly equated to standard deviations). If you see a large discrepency between standard deviations, it likely means unequal variances and the test would be improperly used!
           If you want to see the math, here's the t-test equation:
         </p><br>
         <img class="EQN" src="img/ttest.gif" alt="t-test equation" /><br>
@@ -178,18 +178,30 @@
               <button id="intro-v-java" type="button" class="btn btn-success" name="introNJava">Intro vs Java t-test</button>
               <p><strong>T-test result:</strong> <span id="intro-java-T-result"></span></p>
               <p><strong>Degrees of freedom:</strong> <span id="intro-java-dF-result"></span></p>
+              <p>
+                <span id="nullTrue1">This t value is >=  2.021, so there is a 95% confidence that these two averages are <em><b>not similar</em></b>. Null hypothesis rejected!</span>
+                <span id="nullFalse1">This t value is < 2.021, so there is a 95% confidence that these two averages are <em><b>similar</em></b>. Null hypothesis not rejected!</span>
+              </p>
             </div>
 
             <div class="col-sm-4">
               <button id="intro-v-jS" type="button" class="btn btn-success" name="introNjS">Intro vs jS t-test</button>
               <p><strong>T-test result:</strong> <span id="intro-jS-T-result"></span></p>
               <p><strong>Degrees of freedom:</strong> <span id="intro-jS-dF-result"></span></p>
+              <p>
+                <span id="nullTrue2">This t value is >=  2.021, so there is a 95% confidence that these two averages are <em><b>not similar</em></b>. Null hypothesis rejected!</span>
+                <span id="nullFalse2">This t value is < 2.021, so there is a 95% confidence that these two averages are <em><b>similar</em></b>. Null hypothesis not rejected!</span>
+              </p>
             </div>
 
             <div class="col-sm-4">
               <button id="java-v-jS" type="button" class="btn btn-success" name="introNjS">Java vs jS t-test</button>
               <p><strong>T-test result:</strong> <span id="java-jS-T-result"></span></p>
               <p><strong>Degrees of freedom:</strong> <span id="java-jS-dF-result"></span></p>
+              <p>
+                <span id="nullTrue3">This t value is >=  2.021, so there is a 95% confidence that these two averages are <em><b>not similar</em></b>. Null hypothesis rejected!</span>
+                <span id="nullFalse3">This t value is < 2.021, so there is a 95% confidence that these two averages are <em><b>similar</em></b>. Null hypothesis not rejected!</span>
+              </p>
             </div>
           </div>
         </div>
