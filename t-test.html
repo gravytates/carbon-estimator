@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/statistics.js"></script>
+    <title>Carbon Estimator</title>
+  </head>
+  <body>
+    <h1>How much CO<sub>2</sub> do you emit?</h1><br>
+    <div id="header">
+      <div id="content">
+        <br>
+        <ul class="nav nav-pills nav-justified">
+          <li role="presentation"><a id="homePage" href="index.html">home</a>
+          <li role="presentation"><a href="why.html">why estimate carbon?</a>
+          <li role="presentation"><a href="ways.html">reduce carbon output</a>
+          <li role="presentation"><a href="methods.html">our methods</a>
+          <li role="presentation" class="active"><a href="t-test.html">t-test</a>
+        </ul>
+      </div>
+    </div>
+    <div id="background"></div>
+    <div class="container">
+      <div class="well">
+        <h2 class="intro">Compare results between cohorts</h2>
+        <h3>A t-test to help help see differences between results.</h3>
+
+        <p>
+          Our t-test can analyze emission results between two cohorts at a time to see if there is a statistically valid difference between groups. Using data methods like sample size, average, and standard deviation, we can produce <em>degrees of freedom</em> and a <em>t-result</em>. To get an exact p-value would require some fancy integral calculus that we just don't have the time for, but by using our results, and setting an alpha of 0.05, we can ascertain whether or not two data-sets are different with a 95% confidence interval. That's a pretty high bar for most!
+          If you want to see the math, here's the t-test equation:
+        </p><br>
+        <img class="EQN" src="img/ttest.gif" alt="t-test equation" /><br>
+        <p>
+          Where X-bar = average emission, s = standard deviation, n = sample size. Standard deviation is calculated using:
+        </p>
+
+        <img class="EQN" src="img/sd.png" alt="standard deviation equation" />
+        <p>
+          Note about the calculator: Unfortunately, all fields for intro cohort must have an input number for any of the three t-tests to work. Please also select applicable 'See your class data!' buttons before selecting the 't-test' button.
+        </p>
+
+
+        <div class="row">
+          <div id="intro-class" class="col-xs-4">
+            <form action="index.html" method="post">
+              <label for="">Intro to Programming emission results:</label><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <button id="introBtn" type="button" class="btn btn-info" name="button">See your class data!</button>
+            </form>
+            <div class="intro-results">
+              <p>
+                Intro to Programming total lbs of CO<sub>2</sub> emission: <span id="introTotal"></span>
+              </p>
+              <p>
+                Average emission: <span id="introAverage"></span>
+              </p>
+              <p>
+                Standard deviation: <span id="introStDev"></span>
+              </p>
+
+            </div>
+          </div> <!--end col-->
+          <div class="col-xs-4">
+            <form id="java-class" action="index.html" method="post">
+
+              <label for="">Java emission results:</label><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <button id="javaBtn" type="button" class="btn btn-info" name="button">See your class data!</button>
+
+            </form>
+            <div class="java-results">
+              <p>
+                Java total lbs of CO<sub>2</sub> emission: <span id="javaTotal"></span>
+              </p>
+              <p>
+                Average emission: <span id="javaAverage"></span>
+              </p>
+              <p>
+                Standard deviation: <span id="javaStDev"></span>
+              </p>
+
+            </div>
+          </div>
+
+          <div class="col-xs-4">
+            <form id="jS-class" action="index.html" method="post">
+
+              <label for="">javaScript emission results:</label><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <input class="form-control" placeholder="lbs of CO2" type="number" min="0"><br>
+              <button id="jSBtn" type="button" class="btn btn-info" name="button">See your class data!</button>
+
+            </form>
+            <div class="jS-results">
+              <p>
+                javaScript total lbs of CO<sub>2</sub> emission: <span id="jSTotal"></span>
+              </p>
+              <p>
+                Average emission: <span id="jSAverage"></span>
+              </p>
+              <p>
+                Standard deviation: <span id="jSStDev"></span>
+              </p>
+
+            </div>
+          </div> <!--end col-->
+        </div> <!--end row-->
+
+        <div class="t-test">
+          <div class="row">
+            <div class="col-sm-4">
+              <button id="intro-v-java" type="button" class="btn btn-success" name="introNJava">Intro vs Java t-test</button>
+              <p><strong>T-test result:</strong> <span id="intro-java-T-result"></span></p>
+              <p><strong>Degrees of freedom:</strong> <span id="intro-java-dF-result"></span></p>
+            </div>
+
+            <div class="col-sm-4">
+              <button id="intro-v-jS" type="button" class="btn btn-success" name="introNjS">Intro vs jS t-test</button>
+              <p><strong>T-test result:</strong> <span id="intro-jS-T-result"></span></p>
+              <p><strong>Degrees of freedom:</strong> <span id="intro-jS-dF-result"></span></p>
+            </div>
+
+            <div class="col-sm-4">
+              <button id="java-v-jS" type="button" class="btn btn-success" name="introNjS">Java vs jS t-test</button>
+              <p><strong>T-test result:</strong> <span id="java-jS-T-result"></span></p>
+              <p><strong>Degrees of freedom:</strong> <span id="java-jS-dF-result"></span></p>
+            </div>
+          </div>
+        </div>
+      </div> <!--end well-->
+    </div> <!--end container-->
+  </body>
+</html>

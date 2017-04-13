@@ -52,7 +52,7 @@ ul {
 }
 
 .btn {
-  width: 25%;
+  width: auto;
   margin: auto;
   justify-content: center;
 }
@@ -123,6 +123,13 @@ ul {
   font-size: 120%;
   letter-spacing: 3px;
   text-transform: uppercase;
+}
+
+.EQN {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
 }
 
 #lower {
