@@ -8,9 +8,11 @@ font-family: 'Montserrat', sans-serif;
 
 h1 {
   margin-top: 0px;
+  margin-bottom: 0px;
   padding-top: 45px;
+  padding-bottom: 0px;
   padding-left: 20px;
-  position: fixed;
+  position: relative;
   text-align: center;
   background-color: white;
   width: 100%;
@@ -20,6 +22,15 @@ h1 {
   text-transform: uppercase;
   word-spacing: 3px;
   font-size: 500%;
+  height: 100%;
+}
+
+.navBar {
+  position: fixed;
+  z-index: 1;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  width: 100%;
 }
 
 input {
@@ -73,12 +84,13 @@ ul {
 
 #header {
   position: fixed;
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 10px;
-  margin-top: 50px;
+  margin-top: 0px;
   background-color: white;
   width: 100%;
-  border-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   text-align: center;
 }
 
@@ -123,6 +135,7 @@ ul {
   font-size: 120%;
   letter-spacing: 3px;
   text-transform: uppercase;
+  margin-top: 0px;
 }
 
 .EQN {
