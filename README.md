@@ -4,6 +4,8 @@
 
 #### By Grady L Shelton, Dana Weiss, & Ben Williams
 
+![homepage](img/carbon.png)
+
 ## Description
 
 This group week website takes user input about their day-to-day activities including how far they travel on a weekly basis,  what modes of transportation they use, what energy fuels their house and how much they use (deduced from amount paid per month), how much they recycle, and what kind of food they regularly eat and then displays an estimate for how much carbon dioxide they are responsible for emitting on a monthly basis. There is a t-test calculator on an additional page that can be used to compare the current cohorts of Epicodus against each other to evaluate who emits less carbon dioxide. Additional links provide valuable information regarding tips to reduce carbon dioxide output, why reducing carbon dioxide is important, and the methodology behind the calculator.
@@ -48,6 +50,11 @@ Website can be viewed in browser at https://gravytates.github.io/carbon-estimato
 * User can enter emission data into t-test inputs for the different cohorts currently enrolled at Epicodus to evaluate differences between cohort results.
   * **Example Input** User inputs at least two results each for two different classes: "5231, 5500" & "5899, 6000"
   * **Example Output** t-result: 4.065 dF: 2; with alpha of 0.05 this result is null hypothesis rejected, two results are not similar.
+
+## Screenshot
+
+![t-test](img/t-test.png)
+
 
 ## Setup/Installation Requirements
 
